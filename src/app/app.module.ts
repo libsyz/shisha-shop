@@ -1,12 +1,12 @@
+import { AppComponent } from './app.component';
+import { NgModule, InjectionToken } from '@angular/core';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { UserComponent } from './user/user.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
@@ -16,6 +16,16 @@ import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { HomeComponent } from './home/home.component';
+import { AngularFireModule } from 'angularfire2';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAkY1ImgdyGMe3CKQxTTZMnLoej7FDZf5U",
+  authDomain: "shisha-shop.firebaseapp.com",
+  databaseURL: "https://shisha-shop.firebaseio.com",
+  projectId: "shisha-shop",
+  storageBucket: "shisha-shop.appspot.com",
+  messagingSenderId: "205593630887"
+}
 
 
 @NgModule({
@@ -35,6 +45,7 @@ import { HomeComponent } from './home/home.component';
     NotfoundComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(firebaseConfig),
     BrowserModule,
     RouterModule.forRoot([
       {
@@ -72,7 +83,7 @@ import { HomeComponent } from './home/home.component';
     ]),
     NgbModule.forRoot()
   ],
-  providers: [AngularFireAuth ],
+  providers: [AngularFireAuth, AngularFireAuthModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
