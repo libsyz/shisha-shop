@@ -1,3 +1,4 @@
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { UserComponent } from './user/user.component';
@@ -15,6 +16,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +72,7 @@ import { HomeComponent } from './home/home.component';
     ]),
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [AngularFireAuth ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

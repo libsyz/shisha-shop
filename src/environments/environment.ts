@@ -3,8 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true
+  production: true,
+  firebase: {
+    apiKey: "AIzaSyAkY1ImgdyGMe3CKQxTTZMnLoej7FDZf5U",
+    authDomain: "shisha-shop.firebaseapp.com",
+    databaseURL: "https://shisha-shop.firebaseio.com",
+    projectId: "shisha-shop",
+    storageBucket: "shisha-shop.appspot.com",
+    messagingSenderId: "205593630887"
+  }
 };
+
+
 
 /*
  * In development mode, to ignore zone related error stack frames such as
