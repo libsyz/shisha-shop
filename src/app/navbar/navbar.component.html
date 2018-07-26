@@ -13,14 +13,16 @@
          Shopping Cart 
         </a>
       </li>
-      <li *ngIf="!(user$ | async)">
+      <ng-template #anonymousUser>
+      <li>
       <a class="nav-link"
       routerLink="login"
       routerLinkActive="active">
       Login 
         </a>
       </li>
-      <li *ngIf="user$ | async as user" class="nav-item">
+    </ng-template>
+      <li *ngIf="user$ | async as user; else anonymousUser" class="nav-item">
         <a class="nav-link" 
          routerLink="user"
          routerLinkActive="active"> {{ user.displayName }} </a>
