@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth-guard.service';
 import { AuthenticationServiceService } from './authentication-service.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from 'angularfire2';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAkY1ImgdyGMe3CKQxTTZMnLoej7FDZf5U",
@@ -97,7 +99,12 @@ const firebaseConfig = {
     ]),
     NgbModule.forRoot()
   ],
-  providers: [AngularFireAuth, AngularFireAuthModule, AuthenticationServiceService],
+  providers: [
+              AngularFireAuth, 
+              AngularFireAuthModule, 
+              AuthenticationServiceService,
+              AuthGuard
+             ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
