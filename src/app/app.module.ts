@@ -79,6 +79,18 @@ const firebaseConfig = {
         component: HomeComponent
       },
       {
+        path: "orders",
+        component: OrdersComponent
+      },
+      {
+        path: "admin-orders",
+        component: AdminOrdersComponent,
+      },
+      {
+        path: "admin-products",
+        component: AdminProductsComponent,
+      },
+      {
         path: "**",
         component: NotfoundComponent
       }

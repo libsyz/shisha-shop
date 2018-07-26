@@ -31,10 +31,10 @@
         <a ngbDropdownToggle class="nav-link" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
         </a>
         <div ngbDropdownMenu class="dropdown-menu"  aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">My Orders</a>
-          <a class="dropdown-item" href="#">Manage Orders</a>
-          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="orders">My Orders</a>
+          <a class="dropdown-item" routerLink="admin-orders">Manage Orders</a>
           <a class="dropdown-item" href="#">Manage Products</a>
+          <div class="dropdown-divider"></div>
           <a (click)="logOut()"class="dropdown-item" href="#">Log Out</a>
         </div>
       </li>
