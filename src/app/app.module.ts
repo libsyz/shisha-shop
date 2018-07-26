@@ -1,3 +1,4 @@
+import { AuthenticationServiceService } from './authentication-service.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AppComponent } from './app.component';
 import { NgModule, InjectionToken } from '@angular/core';
@@ -84,7 +85,7 @@ const firebaseConfig = {
     ]),
     NgbModule.forRoot()
   ],
-  providers: [AngularFireAuth, AngularFireAuthModule],
+  providers: [AngularFireAuth, AngularFireAuthModule, AuthenticationServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

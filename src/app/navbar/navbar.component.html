@@ -22,12 +22,12 @@
         </a>
       </li>
     </ng-template>
-      <li *ngIf="user$ | async as user; else anonymousUser" class="nav-item">
+      <li *ngIf="authService.user$ | async as user; else anonymousUser" class="nav-item">
         <a class="nav-link" 
          routerLink="user"
          routerLinkActive="active"> {{ user.displayName }} </a>
       </li>
-      <li *ngIf="user$ | async as user" ngbDropdown class="nav-item dropdown">
+      <li *ngIf="authService.user$ | async as user" ngbDropdown class="nav-item dropdown">
         <a ngbDropdownToggle class="nav-link" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
         </a>
         <div ngbDropdownMenu class="dropdown-menu"  aria-labelledby="navbarDropdown">
