@@ -107,6 +107,7 @@ const firebaseConfig = {
   ],
   providers: [
               AngularFireAuth, 
+              AngularFireDatabase,
               AngularFireAuthModule, 
               AuthenticationServiceService,
               AuthGuard
