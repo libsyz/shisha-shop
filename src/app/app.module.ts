@@ -53,6 +53,10 @@ const firebaseConfig = {
     BrowserModule,
     RouterModule.forRoot([
       {
+        path: "",
+        component: HomeComponent
+      },
+      {
         path: "shopping-cart",
         component: ShoppingCartComponent
       },
@@ -61,28 +65,28 @@ const firebaseConfig = {
         component: ProductsComponent
       },
       {
-        path: "user",
-        component: UserComponent
-      },
-      {
         path: 'login',
         component: LoginComponent
       },
       {
+        path: "user",
+        component: UserComponent,
+        canActivate: [AuthGuard]
+      },
+      {
         path: 'checkout', 
-        component: CheckoutComponent
+        component: CheckoutComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: "order-success",
-        component: OrderSuccessComponent
-      },
-      {
-        path: "",
-        component: HomeComponent
+        component: OrderSuccessComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: "orders",
-        component: OrdersComponent
+        component: OrdersComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: "admin-orders",
@@ -92,6 +96,7 @@ const firebaseConfig = {
       {
         path: "admin-products",
         component: AdminProductsComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: "**",
