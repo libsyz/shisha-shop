@@ -87,6 +87,7 @@ const firebaseConfig = {
       {
         path: "admin-orders",
         component: AdminOrdersComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: "admin-products",
