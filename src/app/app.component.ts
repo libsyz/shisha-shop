@@ -10,14 +10,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private auth: AuthenticationServiceService,
-              private router: Router){
-    auth.user$.subscribe(user => {
-      if (user) {
-      let returnUrl = localStorage.getItem('returnUrl');
-      router.navigate([returnUrl]);
-      }
-    })
-  }
+  constructor(private router: Router,
+              private authService: AuthenticationServiceService){
+            
+
+            this.authService.user$.subscribe(user => {
+              if (user) {
+                this.router.navigate([localStorage.getItem("returnUrl")])
+              }
+            })
+
+
+              }
 
 }
