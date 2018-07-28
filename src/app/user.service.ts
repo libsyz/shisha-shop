@@ -13,10 +13,14 @@ export class UserService {
   }
 
   save(user: firebase.User){
-
-    this.angularDB.object("users/" + user.uid).update({
+    this.angularDB.object("/users/" + user.uid).update({
       username: user.displayName,
       email: user.email
     })
+  }
+
+
+  get(uid: string){
+    return this.angularDB.object("/users/" + uid);
   }
 }

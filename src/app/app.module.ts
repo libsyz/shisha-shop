@@ -1,3 +1,4 @@
+import { AdminGuardService } from './admin-guard.service';
 import { AuthGuard } from './auth-guard.service';
 import { AuthenticationServiceService } from './authentication-service.service';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -91,12 +92,12 @@ const firebaseConfig = {
       {
         path: "admin-orders",
         component: AdminOrdersComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AdminGuardService]
       },
       {
         path: "admin-products",
         component: AdminProductsComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AdminGuardService]
       },
       {
         path: "**",
@@ -110,6 +111,7 @@ const firebaseConfig = {
               AngularFireDatabase,
               AngularFireAuthModule, 
               AuthenticationServiceService,
+              AdminGuardService,
               AuthGuard
              ],
   bootstrap: [AppComponent]
